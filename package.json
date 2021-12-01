@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/Didriksson/adventofcode2021#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "minimist": "^1.2.5",
-    "nanobench": "^2.1.1"
+    "nanobench": "^2.1.1",
+    "pug": "^3.0.2"
   },
   "devDependencies": {
     "@types/jest": "^27.0.3",
