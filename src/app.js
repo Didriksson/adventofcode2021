@@ -1,7 +1,8 @@
 const express = require('express')
 const pug = require('pug')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
+
 var bodyParser = require('body-parser')
 const { Day1 } = require('./solutions/1/day_1')
 
