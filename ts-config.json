@@ -2,7 +2,7 @@
     "compilerOptions": {
       "types": ["reflect-metadata", "jest", "node"],
       "typeRoots": ["./types", "./node_modules/@types"],
-      "strict": true
+      "strict": false
     },
     "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"],
     "include": ["./src/**/*.tsx", "./src/**/*.ts"]

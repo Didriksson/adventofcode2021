@@ -3,6 +3,7 @@ const pug = require('pug')
 const app = express()
 const port = 3000
 var bodyParser = require('body-parser')
+const { Day1 } = require('./solutions/1/day_1')
 
 
 app.set("view engine", "pug")
@@ -19,12 +20,21 @@ app.get('/lucka/:dag', (req, res) => {
 
 
 app.post('/lucka/:dag', (req, res) => {
-  const result = require(`./solutions/${req.params['dag']}/day_${req.params['dag']}`).solve(req.body.input);
-  res.render('lucka', 
+  if(req.params['dag'] === '1'){
+    const day = new Day1();
+    const result = day.benchMark(req.body.input);
+    console.log(result);
+    res.render('lucka', 
     { 
       dag: req.params['dag'],
-      resultat: result
-    });
+      resultA: result.partA,
+      resultB: result.partB,
+      timeA: result.timeA,
+      timeB: result.timeB,
+    }); 
+  } else {
+    res.render('index');
+  }  
 })
   
 

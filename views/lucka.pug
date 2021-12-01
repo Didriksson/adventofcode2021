@@ -11,7 +11,7 @@ html
                     a(href="/")
                         img.me-3(src="/img/santa.png" alt width="48" height="48")
                     h1.d-flex.align-items-center God Jul - Lucka #{dag}
-            unless resultat
+            unless resultA !== undefined || resultB !== undefined
                 .my-3.p-3.rounded.shadow-sm
                     form(method="POST" action="/lucka/"+dag).input-form
                         label.border-bottom.pb-2.mb-0(for="input") Input
@@ -20,10 +20,19 @@ html
                     a(href="/")
                         button.mt-2.rounded Back
             else
-                .my-3.p-3.rounded.bg-body.shadow-sm
+                .my-3.p-3.rounded.shadow-sm.aoc-bg-color
                     .my-3.p-3.bg-body.rounded.shadow-sm
-                        h2 Result
-                        p #{resultat}
+                        h2.mb-2 Result
+                        h5 Part A
+                        strong Result: 
+                        p.mb-1 #{resultA}
+                        strong Time:
+                        p #{timeA} ms
+                        h5 Part B
+                        strong Result: 
+                        p.mb-1 #{resultB}
+                        strong Time:
+                        p #{timeB} ms
                     a(href="/lucka/"+dag)
                         button.m-3.rounded Back
 

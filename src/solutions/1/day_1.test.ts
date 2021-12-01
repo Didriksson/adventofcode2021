@@ -1,7 +1,7 @@
-import { solveA, solveB } from "./day_1";
+import { Day1 } from "./day_1";
 
 test('Count increases should be 7', () => {
-    expect(solveA(`199
+    expect(new Day1().solveA(`199
     200
     208
     210
@@ -14,7 +14,7 @@ test('Count increases should be 7', () => {
   });
 
   test('Part B should be 5', () => {
-    expect(solveB(`199
+    expect(new Day1().solveB(`199
     200
     208
     210
