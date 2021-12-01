@@ -1,9 +1,8 @@
-import type {Config} from '@jest/types';
-// Sync object
-const config: Config.InitialOptions = {
-  verbose: true,
+module.exports = {
+  roots: ['<rootDir>/src'],
   transform: {
-    '^.+\\.ts?$': 'ts-jest',
+    '^.+\\.tsx?$': 'ts-jest',
   },
-};
-export default config;
+  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+}

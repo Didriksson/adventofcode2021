@@ -13,4 +13,23 @@ export class SolutionUtils {
         return fs.readFileSync(path,'utf8');
     }
 
+    static benchMark(){
+        bench('', function (b: { start: () => void; end: () => void; }) { 
+            b.start()
+            const result = solveA(input);
+            console.log(`Result: ${result}`);
+            b.end();
+    
+            b.start()
+            const resultB = solveB(input);
+            console.log(`Result B: ${resultB}`);
+            b.end();
+        });
+    
+    }
+
+}
+
+function bench(arg0: string, arg1: (b: { start: () => void; end: () => void; }) => void) {
+    throw new Error('Function not implemented.');
 }
