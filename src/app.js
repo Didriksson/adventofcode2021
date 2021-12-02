@@ -27,7 +27,7 @@ app.post('/lucka/:dag', (req, res) => {
     day = new Day1();
   } 
   
-  if(req.params['dag'] === '2'){
+  else if(req.params['dag'] === '2'){
     day = new Day2();
   }
   
