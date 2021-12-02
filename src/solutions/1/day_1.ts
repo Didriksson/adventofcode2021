@@ -9,10 +9,8 @@ type ResultAcc = {
 export class Day1 extends Solution{
 
     solveA = (input: String): any => {        
-        console.log(input)
         const pInput: number[] = this.parseInputToNumbers(input)
         const result = this.countIncreases(pInput);
-        console.log(result);
         return result.numberOfIncreases;
     }
     

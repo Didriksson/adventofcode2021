@@ -5,6 +5,7 @@ const port = process.env.PORT || 3000
 
 var bodyParser = require('body-parser')
 const { Day1 } = require('./solutions/1/day_1')
+const { Day2 } = require('./solutions/2/day_2')
 
 
 app.set("view engine", "pug")
@@ -21,21 +22,29 @@ app.get('/lucka/:dag', (req, res) => {
 
 
 app.post('/lucka/:dag', (req, res) => {
+  let day;
   if(req.params['dag'] === '1'){
-    const day = new Day1();
-    const result = day.benchMark(req.body.input);
-    console.log(result);
-    res.render('lucka', 
-    { 
-      dag: req.params['dag'],
-      resultA: result.partA,
-      resultB: result.partB,
-      timeA: result.timeA,
-      timeB: result.timeB,
-    }); 
-  } else {
+    day = new Day1();
+  } 
+  
+  if(req.params['dag'] === '2'){
+    day = new Day2();
+  }
+  
+  else {
     res.render('index');
+    return;
   }  
+  
+  result = day.benchMark(req.body.input); 
+  res.render('lucka', 
+  { 
+    dag: req.params['dag'],
+    resultA: result.partA,
+    resultB: result.partB,
+    timeA: result.timeA,
+    timeB: result.timeB,
+  });
 })
   
 

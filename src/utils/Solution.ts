@@ -15,8 +15,9 @@ export abstract class Solution {
     abstract solveB(input: string): any;
 
     public parseInput(input: String): string[] {
-        throw new Error("Method not implemented.");
+        return input.split("\n").map(i => i.trim());
     }
+
     public parseInputToNumbers(input: String): number[] {
         return input.split("\n").map(p => +p);
     }
