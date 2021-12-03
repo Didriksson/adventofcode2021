@@ -1,5 +1,4 @@
 import { Solution } from "../../utils/Solution";
-const path = require('path');
 
 export class Day2 extends Solution{
 

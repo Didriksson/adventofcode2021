@@ -1,5 +1,4 @@
 import { Solution } from "../../utils/Solution";
-const path = require('path');
 
 type ResultAcc = {
     previous: number | undefined,

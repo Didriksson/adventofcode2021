@@ -6,6 +6,7 @@ const port = process.env.PORT || 3000
 var bodyParser = require('body-parser')
 const { Day1 } = require('./solutions/1/day_1')
 const { Day2 } = require('./solutions/2/day_2')
+const { Day3 } = require('./solutions/3/day_3')
 
 
 app.set("view engine", "pug")
@@ -29,6 +30,10 @@ app.post('/lucka/:dag', (req, res) => {
   
   else if(req.params['dag'] === '2'){
     day = new Day2();
+  }  
+  
+  else if(req.params['dag'] === '3'){
+    day = new Day3();
   }
   
   else {
