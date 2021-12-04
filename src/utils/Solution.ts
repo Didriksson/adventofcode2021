@@ -21,7 +21,9 @@ export abstract class Solution {
     public parseInputToNumbers(input: String): number[] {
         return input.split("\n").map(p => +p);
     }
-    
+    public parseRowToNumbers(input: string, delimiter: RegExp = new RegExp('\\s+')){
+        return input.split(delimiter).map(x=> +x);
+    }
     public readFile(path: string){
         return fs.readFileSync(path,'utf8');
     }
