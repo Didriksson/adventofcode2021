@@ -10,6 +10,7 @@ const { Day3 } = require('./solutions/3/day_3')
 const { Day4 } = require('./solutions/4/day_4')
 const { Day5 } = require('./solutions/5/day_5')
 const { Day6 } = require('./solutions/6/day_6')
+const { Day7 } = require('./solutions/7/day_7')
 
 app.set("view engine", "pug")
 app.use(express.static('public'))
@@ -46,6 +47,9 @@ app.post('/lucka/:dag', (req, res) => {
   }  
   else if(req.params['dag'] === '6'){
     day = new Day6();
+  }  
+  else if(req.params['dag'] === '7'){
+    day = new Day7();
   }
   
   else {
