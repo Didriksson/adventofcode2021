@@ -44,7 +44,6 @@ export class Day9 extends Solution {
   solveB = (input: String): any => {
     const cave = this.parseInput(input).map((r) => r.split("").map((n) => +n));
     const lowpoints = this.getLowpoints(cave);
-    console.log(lowpoints)
     const result = lowpoints.map((lowpoint) => {
       const basin: Point[] = [lowpoint]
       const pointsToCheck: Point[] = [lowpoint]
